@@ -1,0 +1,43 @@
+body { text-align: center; }
+h1 { line-height: 100px; }
+.ieee-intro, label {font-family: 'Open Sans', sans-serif; text-align: left;}
+ul {
+  margin: 0;
+  padding-bottom: 30px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul li {
+  height: 25px;
+  width: 25px;
+  border: solid;
+  border-top-width: 4px;
+  border-bottom-width: 4px;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-color: black;
+}
+ul li:first-child {border-left-width: 4px;}
+ul li:last-child {border-right-width: 4px;}
+
+.nan {color: red;}
+.overflow {color: blue;}
+.underflow {color: darkgreen;}
+
+.sign-bit {background-color: lightcoral;}
+.exp-bit {background-color: lightgreen;}
+.frac-bit {background-color: aqua;}
+.blank {background-color: white; border: none;}
+.legend {border-left-width: 4px; border-right-width: 4px;}
+
+#intro {margin-left: 20%; margin-right: 20%;}
+#legends {
+  padding-top: 100px;
+  display: flex; 
+  justify-content: left;
+  margin-left: 30%;
+  margin-right: 25%;
+  font-family: 'Open Sans', sans-serif;
+}

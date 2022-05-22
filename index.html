@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IEEE 754 Floating Point Converter</title>
+    <!--To get the font 'Open Sans' from Google Fonts. I did not use any javascript frameworks or anything like that-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>How Numbers are Stored in Memory - IEEE754 Standard</h1>
+    <div id="intro">
+      <p class="ieee-intro"><strong>IEEE Standard for Floating-Point Arithmetic (IEEE 754)</strong> is a technical standard for floating-point
+        arithmetic established in 1985 by <strong>the Institute of Electrical and Electronics Engineers (IEEE)</strong>.
+        The standard addressed many problems found in the diverse floating-point implementations that 
+        made them difficult to use reliably and portably.<br>
+        Here is an article that can help you understand IEEE 754 Standard better,
+        <a href="https://polarisxu.studygolang.com/posts/basic/diagram-float-point/">
+          click here to visit the site
+        </a>.<br><br><br>
+      </p>
+      <p><strong>Here is a demo showing how floating point numbers are stored in memory.</strong></p>
+      <p style="font-family: 'Open Sans', sans-serif;">
+        You can use floating numbers like <strong>0.1, 1e100, 1e-100, 50, ...</strong> to test the converter
+      </p>
+      <p style="font-family: 'Open Sans', sans-serif;"><strong>Overflow, underflow, NaN, -0</strong> will be detected.</p>
+    </div>
+    <form id="float-input-form">
+      <label for="float"><strong>Here to enter a floating point number: </strong></label>
+      <input id="float">
+    </form>
+    <h2>Float-32</h2>
+    <ul id="ieee754-float-32"></ul>
+    <h2>Float-64</h2>
+    <ul id="ieee754-float-64-part1" class="bits"></ul>
+    <ul id="ieee754-float-64-part2" class="bits"></ul>
+    <script src="script.js"></script>
+    <div id="legends">
+      <ul>
+        <span><strong>Legends:</strong></span> <li class="blank legend"></li>
+        <li class="sign-bit legend"></li> <li class="blank legend"></li>
+        <span>sign bit<br></span>
+      </ul>
+      <ul>
+        <li class="exp-bit legend"></li> <li class="blank legend"></li>
+        <span>exponent bit</span>
+      </ul>
+      <ul>
+        <li class="frac-bit legend"></li> <li class="blank legend"></li>
+        <span>fraction bit</span>
+      </ul>
+    </div>
+  </body>
+</html>
