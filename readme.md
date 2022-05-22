@@ -9,3 +9,4 @@ Now it is available on github pages:  [IEEE754-Converter](https://timesea05.gith
 * convert floating point numbers to IEEE-754 form(including float32 & float64)
 * detect NaN
 * detect overflow & overflow
+* detect -0(negative zero)
