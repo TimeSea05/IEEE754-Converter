@@ -56,7 +56,7 @@ function handleInputChange(event) {
 
   function isNotValidZeroStr(str) {
     for (let char of str) {
-      if (!(char === '0' || char === '.')) return true
+      if (!(char === '0' || char === '.' || char === '-')) return true
     }
     return false
   }
@@ -220,9 +220,10 @@ function calculateIEEEForm(num, type) {
   if (flag === 'Overflow') return generateNaNOrInfinity('Infinity', type, sign)
   else if (flag === 'Underflow') return calculateIEEEForm(sign * 0, type);
 
-  const numBinStr = num.toString(2)
+  const numBinStr = num.toString(2).replace('.', '')
+  const intPartOfNumStr = Math.floor(num).toString(2)
   // get the value of the exponent part
-  if (num >= 1) exp = numBinStr.length - 1
+  if (num >= 1) exp = intPartOfNumStr.length - 1
   else if (num === 0 && type === 'float32') exp = -127
   else if (num === 0 && type === 'float64') exp = -1023
   else {
