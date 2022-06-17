@@ -11,13 +11,12 @@
   <body>
     <h1>How Numbers are Stored in Memory - IEEE754 Standard</h1>
     <div id="intro">
-      <p class="ieee-intro"><strong>IEEE Standard for Floating-Point Arithmetic (IEEE 754)</strong> is a technical standard for floating-point
-        arithmetic established in 1985 by <strong>the Institute of Electrical and Electronics Engineers (IEEE)</strong>.
-        The standard addressed many problems found in the diverse floating-point implementations that 
-        made them difficult to use reliably and portably.<br>
-        Here is an article that can help you understand IEEE 754 Standard better,
+      <p class="ieee-intro"><strong>IEEE二进制浮点数算术标准(IEEE 754)是20世纪80年代以来最广泛使用的浮点数运算标准,
+        为许多CPU与浮点运算器所采用。这个标准定义了表示浮点数的格式(包括负零-0)与反常值(denormal number), 一些特殊数值
+        ((无穷(Inf)与非数值(NaN)), 以及这些数值的“浮点数运算符”；<br>
+        这篇文章可以更好地帮助你理解IEEE-754标准,
         <a href="https://polarisxu.studygolang.com/posts/basic/diagram-float-point/">
-          click here to visit the site
+          点击访问该网页
         </a>.<br><br><br>
       </p>
       <p><strong>Here is a demo showing how floating point numbers are stored in memory.</strong></p>
@@ -40,15 +39,15 @@
       <ul>
         <span><strong>Legends:</strong></span> <li class="blank legend"></li>
         <li class="sign-bit legend"></li> <li class="blank legend"></li>
-        <span>sign bit<br></span>
+        <span>符号位<br></span>
       </ul>
       <ul>
         <li class="exp-bit legend"></li> <li class="blank legend"></li>
-        <span>exponent bit</span>
+        <span>指数位</span>
       </ul>
       <ul>
         <li class="frac-bit legend"></li> <li class="blank legend"></li>
-        <span>fraction bit</span>
+        <span>有效数位</span>
       </ul>
     </div>
   </body>
