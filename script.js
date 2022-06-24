@@ -45,6 +45,7 @@ const FLOAT64_FRAC_LENGTH = 52
 function handleInputChange(event) {
   const floatNumStr = event.target.value
   const floatNum = Number(floatNumStr)
+  const unsignedFloadNum = floatNum < 0 ? -floatNum : floatNum
 
   if (Number.isNaN(floatNum) && !isNaN) {
     floatInputForm.after(NaNPrompt)
@@ -63,7 +64,7 @@ function handleInputChange(event) {
   if (isNotValidZeroStr(floatNumStr) && floatNum === 0) {
     if (!isUnderflow32.state) IEEE754Float32.after(underflowPrompt32)
     if (!isUnderflow64.state) IEEE754Float64Part2.after(underflowPrompt64)
-    isUnderflow64.state = true
+    isUnderflow32.state = true
     isUnderflow64.state = true
 
     hasDealtWithUnderflow.state = true
@@ -86,11 +87,11 @@ function handleInputChange(event) {
       stateObj.state = false
     }
   }
-  setFlowState(floatNum, 'float32', IEEE754Float32, isOverflow32, overflowPrompt32, 'Overflow');
-  setFlowState(floatNum, 'float64', IEEE754Float64Part2, isOverflow64, overflowPrompt64, 'Overflow');
+  setFlowState(unsignedFloadNum, 'float32', IEEE754Float32, isOverflow32, overflowPrompt32, 'Overflow');
+  setFlowState(unsignedFloadNum, 'float64', IEEE754Float64Part2, isOverflow64, overflowPrompt64, 'Overflow');
   if (!hasDealtWithUnderflow.state) {
-    setFlowState(floatNum, 'float32', IEEE754Float32, isUnderflow32, underflowPrompt32, 'Underflow');
-    setFlowState(floatNum, 'float64', IEEE754Float64Part2, isUnderflow64, underflowPrompt64, 'Underflow');
+    setFlowState(unsignedFloadNum, 'float32', IEEE754Float32, isUnderflow32, underflowPrompt32, 'Underflow');
+    setFlowState(unsignedFloadNum, 'float64', IEEE754Float64Part2, isUnderflow64, underflowPrompt64, 'Underflow');
   }
 
   const float32Str = calculateIEEEForm(floatNum, 'float32').reduce((str, elem) => str + elem, '')
